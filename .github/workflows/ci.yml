@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python:
+    name: Python SDK
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          cd packages/python
+          pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          cd packages/python
+          ruff check src/ tests/
+      - name: Test
+        run: |
+          cd packages/python
+          python -m pytest tests/ -v --tb=short
+
+  node:
+    name: Node.js SDK
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install & Build Node SDK
+        run: |
+          cd packages/node
+          npm install
+          npm run build
+      - name: Test Node SDK
+        run: |
+          cd packages/node
+          npm test
+      - name: Lint Node SDK
+        run: |
+          cd packages/node
+          npm run lint
+
+  mcp:
+    name: MCP Server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install & Build Node SDK (dependency)
+        run: |
+          cd packages/node
+          npm install
+          npm run build
+      - name: Install & Build MCP Server
+        run: |
+          cd packages/mcp
+          npm install
+          npm run build

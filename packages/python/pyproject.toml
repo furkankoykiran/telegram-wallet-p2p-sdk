@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-wallet-p2p"
+version = "1.0.0"
+description = "Unofficial Python SDK for the Telegram Wallet P2P API"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Furkan Köykıran"}
+]
+keywords = ["telegram", "wallet", "p2p", "crypto", "api", "sdk"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "aiohttp>=3.9.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "aioresponses>=0.7.6",
+    "ruff>=0.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/furkankoykiran/telegram-wallet-p2p-sdk"
+Documentation = "https://github.com/furkankoykiran/telegram-wallet-p2p-sdk/tree/main/packages/python"
+Repository = "https://github.com/furkankoykiran/telegram-wallet-p2p-sdk"
+Issues = "https://github.com/furkankoykiran/telegram-wallet-p2p-sdk/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["UP006", "UP007", "UP035", "UP037", "UP045"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

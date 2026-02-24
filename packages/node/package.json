@@ -1,0 +1,52 @@
+{
+    "name": "telegram-wallet-p2p",
+    "version": "1.0.0",
+    "description": "Unofficial Node.js/TypeScript SDK for the Telegram Wallet P2P API",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "lint": "eslint src/ tests/",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "telegram",
+        "wallet",
+        "p2p",
+        "crypto",
+        "api",
+        "sdk",
+        "typescript"
+    ],
+    "author": "Furkan Köykıran",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/furkankoykiran/telegram-wallet-p2p-sdk",
+        "directory": "packages/node"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.4.0",
+        "vitest": "^1.6.0",
+        "@typescript-eslint/eslint-plugin": "^7.0.0",
+        "@typescript-eslint/parser": "^7.0.0",
+        "eslint": "^8.57.0"
+    }
+}

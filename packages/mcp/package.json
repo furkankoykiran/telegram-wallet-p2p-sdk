@@ -1,0 +1,46 @@
+{
+    "name": "telegram-wallet-p2p-mcp",
+    "version": "1.0.0",
+    "description": "Unofficial MCP server for Telegram Wallet P2P market data analytics",
+    "type": "module",
+    "main": "./dist/index.js",
+    "bin": {
+        "telegram-wallet-p2p-mcp": "./dist/index.js"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "npx -p typescript tsc",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "telegram",
+        "wallet",
+        "p2p",
+        "mcp",
+        "model-context-protocol",
+        "crypto",
+        "analytics"
+    ],
+    "author": "Furkan Köykıran",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/furkankoykiran/telegram-wallet-p2p-sdk",
+        "directory": "packages/mcp"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.27.0",
+        "zod": "^3.25.76"
+    },
+    "devDependencies": {
+        "@types/node": "^20.19.33",
+        "typescript": "^5.4.0"
+    }
+}
