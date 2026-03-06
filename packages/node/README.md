@@ -15,13 +15,13 @@ A fully typed TypeScript SDK for the [Telegram Wallet P2P API](https://docs.wall
 ## Installation
 
 ```bash
-npm install telegram-wallet-p2p
+npm install @furkankoykiran/telegram-wallet-p2p
 ```
 
 ## Quick Start
 
 ```typescript
-import { WalletP2PClient, TradeSide } from "telegram-wallet-p2p";
+import { WalletP2PClient, TradeSide } from "@furkankoykiran/telegram-wallet-p2p";
 
 const client = new WalletP2PClient({
   apiKey: process.env.WALLET_P2P_API_KEY!,
@@ -41,7 +41,7 @@ for (const item of response.data) {
 ## Analytics
 
 ```typescript
-import { bestPrice, priceSpread, marketSummary, TradeSide } from "telegram-wallet-p2p";
+import { bestPrice, priceSpread, marketSummary, TradeSide } from "@furkankoykiran/telegram-wallet-p2p";
 
 // Find the best sell price
 const best = bestPrice(response.data, TradeSide.SELL);
@@ -79,7 +79,7 @@ import {
   AccessDeniedError,     // 403 — access denied
   RateLimitError,        // 429 — rate limit exceeded
   ServerError,           // 5xx — server error
-} from "telegram-wallet-p2p";
+} from "@furkankoykiran/telegram-wallet-p2p";
 ```
 
 ## License

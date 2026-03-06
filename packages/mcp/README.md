@@ -24,7 +24,7 @@ All tools return structured JSON suitable for AI consumption.
 ### Installation
 
 ```bash
-npm install -g telegram-wallet-p2p-mcp
+npm install -g @furkankoykiran/telegram-wallet-p2p-mcp
 ```
 
 Or build from source:
@@ -52,7 +52,7 @@ Add to your Claude Desktop configuration (`claude_desktop_config.json`):
   "mcpServers": {
     "telegram-wallet-p2p": {
       "command": "npx",
-      "args": ["telegram-wallet-p2p-mcp"],
+      "args": ["@furkankoykiran/telegram-wallet-p2p-mcp"],
       "env": {
         "WALLET_P2P_API_KEY": "your-api-key"
       }
@@ -70,7 +70,7 @@ Add to your VS Code settings (`.vscode/mcp.json`):
   "servers": {
     "telegram-wallet-p2p": {
       "command": "npx",
-      "args": ["telegram-wallet-p2p-mcp"],
+      "args": ["@furkankoykiran/telegram-wallet-p2p-mcp"],
       "env": {
         "WALLET_P2P_API_KEY": "your-api-key"
       }

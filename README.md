@@ -6,7 +6,7 @@
 
   [![CI Status](https://github.com/furkankoykiran/telegram-wallet-p2p-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/furkankoykiran/telegram-wallet-p2p-sdk/actions/workflows/ci.yml)
   [![MIT License](https://img.shields.io/badge/License-MIT-7B62FF.svg?style=flat-square)](LICENSE)
-  [![NPM Package](https://img.shields.io/npm/v/telegram-wallet-p2p?logo=npm&color=CB3837&style=flat-square)](https://www.npmjs.com/package/telegram-wallet-p2p)
+  [![NPM Package](https://img.shields.io/npm/v/@furkankoykiran/telegram-wallet-p2p?logo=npm&color=CB3837&style=flat-square)](https://www.npmjs.com/package/@furkankoykiran/telegram-wallet-p2p)
   [![PyPI Package](https://img.shields.io/pypi/v/telegram-wallet-p2p?logo=python&color=3776AB&style=flat-square)](https://pypi.org/project/telegram-wallet-p2p/)
   [![MCP Ready](https://img.shields.io/badge/MCP-Ready-FFD700.svg?style=flat-square&logo=openai)](https://modelcontextprotocol.io)
 
@@ -83,10 +83,10 @@ async with WalletP2PClient(api_key="your_key") as client:
 
 #### 🌐 Node.js
 ```bash
-npm install telegram-wallet-p2p
+npm install @furkankoykiran/telegram-wallet-p2p
 ```
 ```typescript
-import { WalletP2PClient, TradeSide } from "telegram-wallet-p2p";
+import { WalletP2PClient, TradeSide } from "@furkankoykiran/telegram-wallet-p2p";
 
 const client = new WalletP2PClient({ apiKey: "your_key" });
 const { data } = await client.getOnlineItems({ 
@@ -107,7 +107,7 @@ Instantly empower your AI assistant with real-time market data.
 
 Install the Telegram Wallet P2P MCP server in VS Code with one click:
 
-[<img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white" />](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22telegram-wallet-p2p%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22telegram-wallet-p2p-mcp%22%5D%2C%22env%22%3A%7B%22WALLET_P2P_API_KEY%22%3A%22YOUR_API_KEY%22%7D%7D)
+[<img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white" />](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22telegram-wallet-p2p%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40furkankoykiran%2Ftelegram-wallet-p2p-mcp%22%5D%2C%22env%22%3A%7B%22WALLET_P2P_API_KEY%22%3A%22YOUR_API_KEY%22%7D%7D)
 
 > [!NOTE]
 > After installing, replace `YOUR_API_KEY` with your actual Wallet API key.
@@ -121,7 +121,7 @@ Add this to your `claude_desktop_config.json`:
   "mcpServers": {
     "telegram-wallet-p2p": {
       "command": "npx",
-      "args": ["-y", "telegram-wallet-p2p-mcp"],
+      "args": ["-y", "@furkankoykiran/telegram-wallet-p2p-mcp"],
       "env": {
         "WALLET_P2P_API_KEY": "your-api-key"
       }
