@@ -1,6 +1,6 @@
 {
     "name": "@furkankoykiran/telegram-wallet-p2p",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Unofficial Node.js/TypeScript SDK for the Telegram Wallet P2P API",
     "type": "module",
     "main": "./dist/index.js",
