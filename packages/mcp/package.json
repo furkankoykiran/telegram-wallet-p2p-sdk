@@ -1,6 +1,9 @@
 {
-    "name": "telegram-wallet-p2p-mcp",
+    "name": "@furkankoykiran/telegram-wallet-p2p-mcp",
     "version": "1.0.0",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
     "description": "Unofficial MCP server for Telegram Wallet P2P market data analytics",
     "type": "module",
     "main": "./dist/index.js",

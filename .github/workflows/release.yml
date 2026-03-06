@@ -77,3 +77,59 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
+
+  npm-publish-node-gpr:
+    name: Publish Node.js SDK to GitHub Packages
+    needs: npm-publish-node
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.pkg.github.com'
+          
+      - name: Install dependencies and build
+        working-directory: packages/node
+        run: |
+          npm ci
+          npm run build
+          
+      - name: Publish Node SDK to GitHub Packages
+        working-directory: packages/node
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish
+
+  npm-publish-mcp-gpr:
+    name: Publish MCP Server to GitHub Packages
+    needs: npm-publish-mcp
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.pkg.github.com'
+          
+      - name: Install dependencies and build
+        working-directory: packages/mcp
+        run: |
+          npm ci
+          npm run build
+          
+      - name: Publish MCP Server to GitHub Packages
+        working-directory: packages/mcp
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish
