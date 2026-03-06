@@ -104,7 +104,7 @@ jobs:
         working-directory: packages/node
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm publish
+        run: npm publish --access public
 
   npm-publish-mcp-gpr:
     name: Publish MCP Server to GitHub Packages
@@ -132,4 +132,4 @@ jobs:
         working-directory: packages/mcp
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm publish
+        run: npm publish --access public
